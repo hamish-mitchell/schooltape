@@ -1,7 +1,7 @@
 <script lang="ts">
   import { onMount } from "svelte";
   import IconBtn from "./inputs/IconBtn.svelte";
-  import { MessageCircleMore, RotateCcw, BookText } from "lucide-svelte";
+  import { MessageCircleMore, RotateCcw, BookText, Code } from "lucide-svelte";
 
   let version: string;
   let prefix: string;
@@ -12,10 +12,6 @@
     version = manifest.version_name || manifest.version;
     prefix = version.length <= 5 ? "Version: v" : "v";
   });
-
-  function handleDiscordClick() {
-    window.open("https://discord.gg/rZxtGJ98BE", "_blank");
-  }
 
   function handleResetClick() {
     if (confirm("Are you sure you want to reset all settings?")) {
@@ -45,8 +41,13 @@
     <IconBtn
       title="Discord"
       id="discord"
-      onClick={handleDiscordClick}
+      onClick={()=>{window.open("https://discord.gg/rZxtGJ98BE", "_blank");}}
       icon={MessageCircleMore} />
+    <IconBtn
+      title="Debug"
+      id="debug"
+      onClick={()=>{window.location.hash = "/debug";}}
+      icon={Code} />
     <IconBtn
       title="Reset"
       id="reset"

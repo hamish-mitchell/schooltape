@@ -5,6 +5,7 @@
   import Plugins from "./routes/Plugins.svelte";
   import Themes from "./routes/Themes.svelte";
   import Snippets from "./routes/Snippets.svelte";
+  import Debug from "./routes/Debug.svelte";
   import Banner from "./components/Banner.svelte";
   import { flavors } from "@catppuccin/palette";
   import { onMount, onDestroy } from "svelte";
@@ -14,6 +15,7 @@
     "/plugins": Plugins,
     "/themes": Themes,
     "/snippets": Snippets,
+    "/debug": Debug,
   };
   let flavour = "";
   let accent = "";
